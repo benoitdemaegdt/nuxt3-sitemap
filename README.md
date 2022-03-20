@@ -1,10 +1,10 @@
-# nuxt3-sitemap
+# Sitemap generation for Nuxt3
 So far the official [nuxt/sitemap](https://sitemap.nuxtjs.org/) module [does not support Nuxt3](https://github.com/nuxt-community/sitemap-module/discussions/234).
 
 Here is a simple way to add a sitemap to your Nuxt3 app.
 
 ## Setup
-1. install sitemap.js as a dev dependency
+1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
 ```
