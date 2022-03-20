@@ -43,3 +43,6 @@ In your browser go to `http://localhost:3000/sitemap.xml`
 
 - This only works with static pages. Feel free to edit the code if you want to handle dynamic pages.
 - This does not work in dev mode (you will not be able to access the sitemap.xml when running `npm run dev`).
+
+## Credits
+Most of this code was written by [Florian Lefebvre](https://github.com/florian-lefebvre).
