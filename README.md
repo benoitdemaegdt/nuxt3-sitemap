@@ -46,3 +46,4 @@ In your browser go to `http://localhost:3000/sitemap.xml`
 
 ## Credits
 Most of this code was written by [Florian Lefebvre](https://github.com/florian-lefebvre).
+See [original Github Discussion](https://github.com/nuxt/framework/discussions/3582) and [original file](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
