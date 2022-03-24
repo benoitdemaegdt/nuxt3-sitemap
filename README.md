@@ -20,7 +20,7 @@ mkdir modules && touch modules/sitemap.ts
 ```ts
 export default defineNuxtConfig({
   // some configs
-  buildModules: ['~/modules/sitemap'],
+  modules: ['~/modules/sitemap'],
   sitemap: {
     hostname: 'https://<YOUR_DOMAIN>',
   },
