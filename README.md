@@ -39,6 +39,22 @@ npx nuxi preview
 
 In your browser go to `http://localhost:3000/sitemap.xml`
 
+### Example
+If your pages folder looks like this :
+
+```
+pages/
+├─ index.vue
+├─ blog/
+│  ├─ index.vue
+│  ├─ first-article.vue
+│  ├─ second-article.vue
+│  ├─ third-article.vue
+```
+
+The generated sitemap will look like this :
+![Screenshot](screenshot.png)
+
 ## Limitations
 
 - This only works with static pages. An update is planned for supporting pages generated with @nuxt/content v2 (https://twitter.com/yaeeelglx/status/1504819318072217603?s=21).
