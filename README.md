@@ -58,7 +58,6 @@ The generated sitemap will look like this :
 ## Limitations
 
 - This only works with static pages. An update is planned for supporting pages generated with @nuxt/content v2 (https://twitter.com/yaeeelglx/status/1504819318072217603?s=21).
-- This does not work in dev mode (you will not be able to access the sitemap.xml when running `npm run dev`).
 
 ## Credits
 Big thanks to
