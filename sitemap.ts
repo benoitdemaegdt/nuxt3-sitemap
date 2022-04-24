@@ -1,8 +1,8 @@
 import { mkdirSync, writeFileSync } from 'fs'
 import { Readable } from 'stream'
-import { join, dirname } from 'path'
+import { dirname } from 'path'
 import { SitemapStream, streamToPromise } from 'sitemap'
-import { defineNuxtModule } from '@nuxt/kit'
+import { defineNuxtModule, createResolver } from '@nuxt/kit'
 
 export default defineNuxtModule({
   meta: {
@@ -15,35 +15,37 @@ export default defineNuxtModule({
     hostname: 'http://localhost:3000',
   },
   async setup(options, nuxt) {
-
     async function generateSitemap(routes) {
-      const sitemapRoutes = routes.map((route) => route.path)
-      
+      const sitemapRoutes = routes.map(route => route.path)
+
       // https://github.com/ekalinin/sitemap.js#generate-a-one-time-sitemap-from-a-list-of-urls
       const stream = new SitemapStream({ hostname: options.hostname })
-      return streamToPromise(Readable.from(sitemapRoutes).pipe(stream)).then(
-        data => data.toString()
+      return streamToPromise(Readable.from(sitemapRoutes).pipe(stream)).then(data =>
+        data.toString()
       )
     }
 
-    function createSitemapFile(sitemap, filepath) { 
+    function createSitemapFile(sitemap, filepath) {
       const dirPath = dirname(filepath)
       mkdirSync(dirPath, { recursive: true })
       writeFileSync(filepath, sitemap)
     }
 
-    if (!nuxt.options.dev) {
-      let routes
+    const resolver = createResolver(import.meta.url)
+    const filePath = resolver.resolve(
+      nuxt.options.srcDir,
+      'node_modules/.cache/.sitemap/sitemap.xml'
+    )
 
-      nuxt.hook('pages:extend', async pages => {
-        routes = pages
-      })
+    nuxt.options.nitro.publicAssets = nuxt.options.nitro.publicAssets || []
+    nuxt.options.nitro.publicAssets.push({
+      baseURL: '/',
+      dir: dirname(filePath),
+    })
 
-      nuxt.hook('nitro:generate', async ctx => {
-        const sitemap = await generateSitemap(routes)
-        const filepath = join(ctx.output.publicDir, 'sitemap.xml')
-        return createSitemapFile(sitemap, filepath)
-      })
-    }
+    nuxt.hook('pages:extend', async pages => {
+      const sitemap = await generateSitemap(pages)
+      createSitemapFile(sitemap, filePath)
+    })
   },
 })
