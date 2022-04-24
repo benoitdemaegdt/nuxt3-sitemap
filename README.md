@@ -61,5 +61,6 @@ The generated sitemap will look like this :
 - This does not work in dev mode (you will not be able to access the sitemap.xml when running `npm run dev`).
 
 ## Credits
-Most of this code was written by [Florian Lefebvre](https://github.com/florian-lefebvre).
-See [original Github Discussion](https://github.com/nuxt/framework/discussions/3582) and [original file](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+Big thanks to
+- [Florian Lefebvre](https://github.com/florian-lefebvre) who wrote the original code of this module. See [original Github Discussion](https://github.com/nuxt/framework/discussions/3582) and [original file](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
+- [Diizzayy](https://github.com/Diizzayy) who fixed this module. See [this Github Discussion](https://github.com/nuxt/framework/discussions/4568).
