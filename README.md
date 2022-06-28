@@ -3,7 +3,7 @@ So far the official [nuxt/sitemap](https://sitemap.nuxtjs.org/) module [does not
 
 Here is a simple way to add a sitemap to your Nuxt3 app.
 
-## Setup
+## Setup for a very simple static site
 1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
@@ -55,11 +55,42 @@ pages/
 The generated sitemap will look like this :
 ![Screenshot](screenshot.png)
 
-## Limitations
+## Setup for a dynamic site powered by [@nuxt/content](https://content.nuxtjs.org/) with [prerendering](https://v3.nuxtjs.org/guide/deploy/static-hosting#prerendering)
+1. install [sitemap.ts](sitemap.ts) as a dev dependency
+```bash
+npm install --save-dev sitemap
+```
 
-- This only works with static pages. An update is planned for supporting pages generated with @nuxt/content v2 (https://twitter.com/yaeeelglx/status/1504819318072217603?s=21).
+2. create a new file in the modules folder
+```bash
+mkdir modules && touch modules/sitemap.ts
+```
+
+3. copy/paste the content of [sitemap-dynamic.ts](sitemap-dynamic.ts) inside your newly created `modules/sitemap.ts` file.
+
+4. add following lines in you nuxt.config.ts file
+```ts
+export default defineNuxtConfig({
+  // some configs
+  modules: ['~/modules/sitemap'],
+  sitemap: {
+    hostname: 'https://<YOUR_DOMAIN>',
+  },
+  // more configs
+})
+```
+Don't forget to change <YOUR_DOMAIN> with your actual domain.
+
+5. build your nuxt app and see your sitemap file
+```bash
+npm run generate
+```
+
+Your sitemap is now available in `.output/public/sitemap.xml`
+
 
 ## Credits
 Big thanks to
 - [Florian Lefebvre](https://github.com/florian-lefebvre) who wrote the original code of this module. See [original Github Discussion](https://github.com/nuxt/framework/discussions/3582) and [original file](https://github.com/florian-lefebvre/portfolio/blob/c513428dea912a19ffb684b8b571b08b8882158c/modules/sitemap.ts).
 - [Diizzayy](https://github.com/Diizzayy) who fixed this module. See [this Github Discussion](https://github.com/nuxt/framework/discussions/4568).
+- [codeflorist](https://github.com/codeflorist) who found a way to generate sitemaps for prerendered sites.
