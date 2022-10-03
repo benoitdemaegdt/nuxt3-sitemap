@@ -46,13 +46,17 @@ export default defineNuxtModule({
     nuxt.hook('nitro:build:before', (nitro) => {
       const paths = []
       nitro.hooks.hook('prerender:route', (route) => {
-        if (!route.route.includes('/api/_content')) {
+        // Exclude paths which contain /api/_content, _payload.js and the standard 200.html entry point
+        // None of these should be in the sitemap.xml file
+        if (!route.route.includes('/api/_content') && !route.route.includes('_payload.js') && !route.route.includes('200.html')) {
           paths.push({ path: route.route })
         }
       })
       nitro.hooks.hook('close', async () => {
         const sitemap = await generateSitemap(paths)
         createSitemapFile(sitemap, filePath)
+        // Added output to confirm that the sitemap has been created at the end of the build process
+        console.log('Sitemap created')
       })
     })
   },
