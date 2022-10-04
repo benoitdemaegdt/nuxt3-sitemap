@@ -46,6 +46,8 @@ export default defineNuxtModule({
     nuxt.hook('pages:extend', async pages => {
       const sitemap = await generateSitemap(pages)
       createSitemapFile(sitemap, filePath)
+      // Added output to confirm that the sitemap has been created at the end of the build process
+      console.log('Sitemap created')
     })
   },
 })
