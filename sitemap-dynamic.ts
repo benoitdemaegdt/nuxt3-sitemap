@@ -45,10 +45,12 @@ export default defineNuxtModule({
 
     nuxt.hook('nitro:build:before', (nitro) => {
       const paths = []
+      const EXCLUDED_KEYWORDS = ['/api/_content', '_payload.js', '200.html']
       nitro.hooks.hook('prerender:route', (route) => {
         // Exclude paths which contain /api/_content, _payload.js and the standard 200.html entry point
         // None of these should be in the sitemap.xml file
-        if (!route.route.includes('/api/_content') && !route.route.includes('_payload.js') && !route.route.includes('200.html')) {
+        const shouldBeAddedToSitemap = EXCLUDED_KEYWORDS.every((excudedKeyword) => !route.route.includes(excudedKeyword))
+        if (shouldBeAddedToSitemap) {
           paths.push({ path: route.route })
         }
       })
