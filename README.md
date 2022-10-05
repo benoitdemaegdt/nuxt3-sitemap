@@ -3,7 +3,10 @@ So far the official [nuxt/sitemap](https://sitemap.nuxtjs.org/) module [does not
 
 Here is a simple way to add a sitemap to your Nuxt3 app.
 
-## Setup for a very simple static site
+An example can be found [here](https://monpetitsommet.fr/sitemap.xml)
+<img width="705" alt="Capture d’écran 2022-10-04 à 13 54 00" src="https://user-images.githubusercontent.com/25749578/194003648-6e90e968-423d-4909-916a-4b5231efd1c5.png">
+
+## Setup for a very simple static site (no dynamic page)
 1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
