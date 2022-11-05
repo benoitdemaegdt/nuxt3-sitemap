@@ -16,7 +16,7 @@ export default defineNuxtModule({
   },
   async setup(options, nuxt) {
     async function generateSitemap(routes) {
-      const sitemapRoutes = routes.map(route => route.path)
+      const sitemapRoutes = routes.map(route => route.path).filter(r => !r.includes(':'))
 
       // https://github.com/ekalinin/sitemap.js#generate-a-one-time-sitemap-from-a-list-of-urls
       const stream = new SitemapStream({ hostname: options.hostname })
