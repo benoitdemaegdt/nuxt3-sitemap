@@ -5,6 +5,9 @@ Here is a simple way to add a sitemap to your Nuxt3 app.
 ## Example
 An example of a sitemap rendered with this code can be found [here](https://monpetitsommet.fr/sitemap.xml).
 
+<img width="964" alt="Capture d’écran 2022-11-06 à 13 28 59" src="https://user-images.githubusercontent.com/25749578/200170813-28c50ecb-989c-4311-9f11-49a25931cee6.png">
+
+
 ## Setup for a very simple static site (no dynamic page)
 1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
