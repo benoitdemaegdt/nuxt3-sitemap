@@ -10,6 +10,7 @@ An example of a sitemap rendered with this code can be found [here](https://monp
 ## Setup for a very simple static site (no dynamic page)
 <details>
   <summary>See instructions</summary>
+
 1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
