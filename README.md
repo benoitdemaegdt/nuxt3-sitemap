@@ -67,10 +67,12 @@ The generated sitemap will look like this :
   
 <details>
   <summary>See instructions (new recommanded way)</summary>
-  1. Follow [official instructions](https://content.nuxtjs.org/guide/recipes/sitemap) from @nuxt/content.
-  2. These instructions are not perfect because static urls are not generated in the newly created sitemap.xml. To fix this, replace the sitemap.xml.ts file by the [sitemap.xml.ts](sitemap.xml.ts) from this repository.
   
-  Your sitemap.xml should now be available and accurate 🎉
+1. Follow [official instructions](https://content.nuxtjs.org/guide/recipes/sitemap) from @nuxt/content.
+
+2. These instructions are not perfect because static urls are not generated in the newly created sitemap.xml. To fix this, replace the sitemap.xml.ts file by the [sitemap.xml.ts](sitemap.xml.ts) from this repository.
+  
+Your sitemap.xml should now be available and accurate 🎉
   
 </details>
 
