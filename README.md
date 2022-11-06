@@ -7,8 +7,8 @@ An example of a sitemap rendered with this code can be found [here](https://monp
 
 <img width="964" alt="Capture d’écran 2022-11-06 à 13 28 59" src="https://user-images.githubusercontent.com/25749578/200170813-28c50ecb-989c-4311-9f11-49a25931cee6.png">
 
-
-## Setup for a very simple static site (no dynamic page)
+<details>
+  <summary>Setup for a very simple static site (no dynamic page)</summary>
 1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
@@ -59,9 +59,12 @@ pages/
 
 The generated sitemap will look like this :
 ![Screenshot](screenshot.png)
+</details>
+  
+<details>
+  <summary>Setup for a dynamic site powered by [@nuxt/content](https://content.nuxtjs.org/) with [prerendering](https://v3.nuxtjs.org/guide/deploy/static-hosting#prerendering)</summary>
 
-## Setup for a dynamic site powered by [@nuxt/content](https://content.nuxtjs.org/) with [prerendering](https://v3.nuxtjs.org/guide/deploy/static-hosting#prerendering)
-1. install [sitemap.ts](sitemap.ts) as a dev dependency
+  1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
 npm install --save-dev sitemap
 ```
@@ -92,6 +95,7 @@ npm run generate
 ```
 
 Your sitemap is now available in `.output/public/sitemap.xml`
+</details>
 
 
 ## Credits
