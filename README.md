@@ -67,17 +67,15 @@ The generated sitemap will look like this :
   
 <details>
   <summary>See instructions (new recommanded way)</summary>
+  1. Follow [official instructions](https://content.nuxtjs.org/guide/recipes/sitemap) from @nuxt/content.
+  2. These instructions are not perfect because static urls are not generated in the newly created sitemap.xml. To fix this, replace the sitemap.xml.ts file by the [sitemap.xml.ts](sitemap.xml.ts) from this repository.
   
-    1. Follow [official instructions](https://content.nuxtjs.org/guide/recipes/sitemap) from @nuxt/content
-  
-  2. These instructions are not perfect because static urls are not generated in the newly created sitemap.xml. To fix this, replace the sitemap.xml.ts file by the [sitemap.xml.ts from this repository](sitemap.xml.ts).
-  
-  Your sitemap.xml should now be available with all your URLs 🎉
+  Your sitemap.xml should now be available and accurate 🎉
   
 </details>
 
 <details>
-  <summary>See instructions</summary>
+  <summary>See instructions (outdated)</summary>
 
   1. install [sitemap.ts](sitemap.ts) as a dev dependency
 ```bash
